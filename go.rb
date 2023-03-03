@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 # frozen_string_literal: true
 
 SONGS = '/home/dan/Karaoke/'
