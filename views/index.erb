@@ -1,0 +1,73 @@
+<div class="container">
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide mb-1" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/photos/1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/2.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/3.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/4.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/5.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/6.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/7.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/8.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/9.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/10.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/11.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/photos/12.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+  <table id="songTable" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"><i class="fa-solid fa-play"></i></th>
+        <th scope="col"><i class="fa-solid fa-user"></i> Artist</th>
+        <th scope="col"><i class="fa-solid fa-music"></i> Song</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @song_db.each_with_index do |song, index|%>
+      <tr>
+        <td><button type="button" onclick="Play(<%= index %>);" class="btn btn-dark"><i class="fa-solid fa-play"></i></button></td>
+        <td><%= song[:artist] %></td>
+        <td><%= song[:title] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <script>
+  let table = new DataTable('#songTable', {
+      pageLength: 15,
+      ordering:  false
+  });
+  </script>
+
+</div>
