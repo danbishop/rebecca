@@ -43,3 +43,13 @@ get '/play/:id' do
   puts id
   VLC.play("/home/dan/Karaoke/#{song_db[id][:path]}")
 end
+
+get '/playpause/' do
+  puts 'playpause'
+  VLC.pause
+end
+
+get '/stop/' do
+  puts 'stop'
+  VLC.stop
+end
