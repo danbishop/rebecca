@@ -24,6 +24,14 @@
         fetch("/play/"+id)
           .then(res => console.log('Success ' + id))
       }
+      function Playpause() {
+        fetch("/playpause/"+id)
+          .then(res => console.log('Playpause'))
+      }
+      function Stop() {
+        fetch("/stop/")
+          .then(res => console.log('Stop'))
+      }
     </script>
 
   </head>
@@ -39,9 +47,8 @@
           </button>
           -->
           <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-light"><i class="fa-regular fa-play"></i></button>
-            <button type="button" class="btn btn-outline-light"><i class="fa-regular fa-pause"></i></button>
-            <button type="button" class="btn btn-outline-light"><i class="fa-regular fa-forward"></i></button>
+            <button type="button" class="btn btn-outline-light"><i class="fa-regular fa-play"><i class="fa-regular fa-pause"></i></i></button>
+            <!-- <button type="button" class="btn btn-outline-light"><i class="fa-regular fa-forward"></i></button> -->
             <button type="button" class="btn btn-outline-light"><i class="fa-regular fa-stop"></i></i></button>
           </div>
           </div>
