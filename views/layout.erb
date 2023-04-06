@@ -21,8 +21,30 @@
     
     <script type="text/javascript">
       function Play(id) {
+        fetch("/playing?")
+        .then(response => response.json())
+        .then((myJSON) => {
+          if(myJSON.playing === true){
+            console.log('yay true');
+            var confirmation = new bootstrap.Modal(document.getElementById("confirmModal"), {});
+            // Set id of song that is confirmed to play on play button
+            document.getElementById("confirmButton").addEventListener("click", function(){
+              ConfirmPlay(id);
+              confirmation.hide();
+            });
+            // Show the modal
+            confirmation.show();
+          }
+          else{
+            ConfirmPlay(id);
+          }
+        });
+      }
+
+      function ConfirmPlay(id) {
         fetch("/play/"+id)
-          .then(res => console.log('Success ' + id))
+        .then(response => response.json())
+        .then(response => console.log(JSON.stringify(response)))
       }
       function Playpause() {
         fetch("/playpause/")
