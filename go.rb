@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require 'sinatra'
+require "sinatra/json"
 require 'vlc-client'
 
 # Make available to all ips
@@ -42,6 +43,13 @@ get '/play/:id' do
   id = params[:id].to_i
   puts id
   VLC.play("/home/dan/Karaoke/#{song_db[id][:path]}")
+  state = VLC.playing?
+  json :playing => state
+end
+
+get '/playing?' do
+  state = VLC.playing?
+  json :playing => state
 end
 
 get '/playpause/' do
