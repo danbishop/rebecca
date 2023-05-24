@@ -22,6 +22,8 @@ GEM
       rack-protection (= 3.0.5)
       sinatra (= 3.0.5)
       tilt (~> 2.0)
+    sqlite (1.0.2)
+    sqlite3 (1.6.3-x86_64-linux)
     tilt (2.1.0)
     vlc-client (0.0.7)
 
@@ -32,6 +34,8 @@ DEPENDENCIES
   puma (~> 6.2)
   sinatra (~> 3.0)
   sinatra-contrib (~> 3.0)
+  sqlite (~> 1.0)
+  sqlite3 (~> 1.6)
   vlc-client (~> 0.0.7)
 
 BUNDLED WITH
